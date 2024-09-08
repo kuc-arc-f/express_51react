@@ -5,7 +5,6 @@
     "dev:test": "NODE_ENV=develop nodemon",
     "build": "npm run build:server && npm run build:client",
     "build:prod": "NODE_ENV=production npm run build",
-    "build:test": "npm run clean && node build.js && node buildClient.js && npm run build:css",
     "clean": "rimraf dist && rimraf public/static",
     "build:server": "vite build --ssr src/index.ts --outDir dist",
     "build:client": "npx vite build --mode client",
