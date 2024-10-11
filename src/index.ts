@@ -5,29 +5,13 @@ const app = express();
 //
 import Top from './pages/App';
 //
-//import testRouter from './routes/test'; 
-//import commonRouter from './routes/commonRouter';
-//
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 console.log("env=", process.env.NODE_ENV);
 //
 const errorObj = {ret: "NG", messase: "Error"};
-// route
-//app.use('/api/test', testRouter);
-//app.use('/api/common', commonRouter);
-
 //MPA
-/*
-app.get('/about', (req: any, res: any) => {
-  try {
-    res.send(renderToString(About()));
-  } catch (error) {
-    res.sendStatus(500);
-  }
-});
-*/
 app.get('/*', (req: any, res: any) => {
   try {
     res.send(renderToString(Top()));
@@ -41,4 +25,3 @@ const PORT = 3000;
 app.listen({ port: PORT }, () => {
   console.log(`Server ready at http://localhost:${PORT}`);
 });
-//export const viteNodeApp = app;
